@@ -1,0 +1,240 @@
+/*RESET DE CONFIGURAÇÕES PADRÕES*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+fieldset, input, button {
+    border: none;
+}
+
+:root {
+    font-size: 62.5%;
+    font-family: 'Mulish', sans-serif;
+}
+
+/*Estilização da página*/
+body {
+    background-color: #eeeeee;
+    color: #202024;
+}
+
+.page {
+    display: grid;
+    grid-template-rows: max-content 1fr 1fr max-content;
+
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+
+    background-color: #065E7C;
+
+    padding: 1.2rem 2rem;
+
+    --startY: -100%;
+    animation: move 0.4s backwards;
+}
+
+nav #logo {
+    background-color: #F4FCFF;
+    border-radius: 20rem;
+    padding: 0.8rem;
+}
+
+nav fieldset {
+    flex: 1;
+}
+
+nav fieldset label {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+nav fieldset input {
+    width: 100%;
+    padding: 1.4rem 1.2rem;
+    border-radius: 0.5rem;
+    background-color: #23738d;
+
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+nav fieldset input::placeholder {
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+nav fieldset input:hover, input:focus {
+    outline: none;
+}
+
+nav #perfil {
+    height: 4.2rem;
+    width: 4.2rem;
+
+    border-radius: 10rem;
+}
+
+main {
+    margin-bottom: 3.4rem;
+}
+
+main .imgMain {
+    max-width: 100%;
+    height: max-content;
+    overflow-x: hidden;
+}
+
+main img:nth-child(1) {
+    width: 105%;
+    max-height: 30rem;
+    object-fit: cover;
+}
+
+main section {
+    padding: 0 2.2rem;
+}
+
+main section .header {
+   margin: 3rem 0 2rem; 
+}
+
+main section .header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #202024;
+
+    margin-bottom: 0.8rem;
+}
+
+main section .header #assessment {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+}
+
+main section .header #assessment button {
+    border-radius: 10rem;
+    background-color: #065E7C;
+    padding: 0.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main section p {
+    max-width: 35rem;
+
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+}
+
+aside {
+    padding: 0 2rem;
+}
+
+aside h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+
+    margin-bottom: 3rem;
+}
+
+aside .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+aside .cards .card {
+    width: max-content;
+    height: max-content;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    align-items: center;
+
+    background-color: #f1f1f1;
+    border-radius: 0.8rem;
+    padding: 0.2rem;
+
+    --delay: 0.35s;
+    animation: appear 0.4s var(--delay) backwards;
+}
+
+aside .cards .card img {
+    max-width: 44rem;
+    max-height: 20rem;
+
+    object-fit: cover;
+}
+
+aside .cards .card .textCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+
+    max-width: 22rem;
+}
+
+aside .cards .card .textCard h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+aside .cards .card .textCard p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2rem;
+}
+
+footer {
+    margin-top: 4rem;
+    width: 100%;
+    background-color: #387E96;
+    text-align: center;
+    padding: 1.6rem;
+
+    animation: move 0.4s backwards;
+    --startY: 100%;
+}
+
+footer p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
